@@ -16,7 +16,7 @@ export class OPFParser {
         const manifest = findProperty(this.content, "manifest")[0];
         return manifest.item
             .map((item) => item.$.href)
-            .filter((href) => [".htm", ".html", ".xhtml"].some((sx) => href.includes(sx)))
+            // .filter((href) => [".htm", ".html", ".xhtml"].some((sx) => href.includes(sx)))
             .map((href) => path.posix.join(path.dirname(this.filePath), href));
     }
 
